@@ -3,6 +3,12 @@
    flex-direction: column;
    align-items: center;
    }
+
+   .orders_image{
+    height:200px;
+    width:200px;
+    padding: 20px;
+}
    .search_bar{
     width: 60%;
     border-radius: 20px;
@@ -17,6 +23,7 @@
  background-color: transparent;
  color: red;
     }
+
 .my_order_block{
     background-color: white;
     width:90%;
@@ -25,4 +32,17 @@
     display: flex;
     justify-content: space-around;
   };
- 
+
+  /* //TAB DEVICES */
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        
+  }
+
+  /* MOBILE DEVICES */
+@media (max-width: 768px) {
+  .orders_image{
+    height:100px;
+    width:100px;
+    padding: 10px;
+}
+}

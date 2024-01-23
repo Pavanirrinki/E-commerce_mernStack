@@ -4,7 +4,6 @@ import { useSelector,useDispatch } from 'react-redux';
 import { ParticularCategoryAction, categoriesActions } from '../../Redux/MiddlewareActions';
 import  Carousel  from '../../Components/Carousel';
 import CategoryProducts from '../../Components/Category_products/CategoryProducts';
-import Dropdown from '../../Components/Dropdowns/Dropdown';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
 import "../../Components/Category_products/CategoryProducts.css";
 
@@ -55,7 +54,7 @@ await dispatch(categoriesActions())
       onMouseOut={handleMouseOut} className={idx >= slide && idx < slide + 9 ? 'visible' : 'hidden'}>
       <img src={category.Image} style={{width:"100px",height:"100px"}} />
   <li style={{textAlign:"center",fontWeight:"bold",fontSize:"12px",marginTop:"5px"}}>{category?.name}</li>
-  {activeCategory == category.name.toLowerCase() && <Dropdown activeCategory={activeCategory}/>}
+ 
   </div>
     )
   })}

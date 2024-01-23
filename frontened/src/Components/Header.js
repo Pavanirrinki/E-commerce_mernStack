@@ -14,15 +14,30 @@ import { PiBasketFill } from "react-icons/pi";
 import { RiLoginBoxFill } from "react-icons/ri";
 import {  IoPersonAddSharp } from "react-icons/io5";
 import { FaAddressBook } from "react-icons/fa";
+import {  toast } from 'react-toastify';
 function Header() {
   const navigate = useNavigate();
   const userdetails = JSON.parse(localStorage.getItem("userdata"));
   const [show,setShow]=useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => { ;
-    setShow(true) };
+  const handleShow = () => { setShow(true) };
 
+
+  const LogOutHandler =async() =>{
+    localStorage.removeItem("userdata");
+  await  toast.success(`Account LogOut Successfully`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      })
+    navigate("/")
+  }
   return (
     // DESKTOP VERSION
     <div>
@@ -58,12 +73,12 @@ function Header() {
               <CgProfile className='profile-pic' />
               <div class="dropdown-content">
                 <ul style={{ listStyleType: "none" }}>
-                  <li onClick={() => navigate("/login")}>LOG IN</li>
+                  <li onClick={() =>{ navigate("/login");}}>LOG IN</li>
                   <li onClick={() => navigate("/signup")}>SIGN UP</li>
                   <li onClick={() => navigate("/Myorders")}>MY ORDERS</li>
-                  <li onClick={() => { navigate("/manage_address")}}>Manage Address</li>
-                  <li>WISHLIST</li>
-                  <li onClick={() => localStorage.removeItem("userdata")}>{userdetails && "LOG OUT"}</li>
+                  <li onClick={() => { navigate("/manage_address")}}>MANAGE ADDRESS</li>
+                 
+                  <li onClick={LogOutHandler}>{userdetails && "LOG OUT"}</li>
                 </ul>
               </div>
             </div>

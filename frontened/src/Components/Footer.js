@@ -13,7 +13,8 @@ function Footer() {
                 <GrLocation style={{margin:"4px",fontSize:"30px"}}/>
                     <h4>Find us</h4>
                     </div>
-                    <span style={{marginLeft:"40px"}}>1010 Avenue, sw 54321, chandigarh</span>
+                    <span style={{marginLeft:"40px"}}>1-31 chinaramalayam street,tholeru,<br />
+                    veeravasaram mandal,Andhrapradesh,<br />534247</span>
                 </div>
 
 
@@ -22,7 +23,7 @@ function Footer() {
                 <FiPhoneCall style={{margin:"4px",fontSize:"30px",color:"black"}}/>
                     <h4>Call us</h4>
                     </div>
-                    <span style={{marginLeft:"40px"}}>9876543210 0</span>
+                    <span style={{marginLeft:"40px"}}>63029-29228</span>
                 </div>
 
 
@@ -31,7 +32,7 @@ function Footer() {
                 <MdEmail style={{margin:"4px",fontSize:"30px",color:"black"}}/>
                     <h4>Mail us</h4>
                     </div>
-                    <span style={{marginLeft:"40px"}}>mail@info.com</span>
+                    <span style={{marginLeft:"40px"}}>pavanirrinki01@gmail.com</span>
                 </div>
             </div>
             <hr style={{ color: "blue", border: "2px solid red", marginBottom: "20px" }} />
