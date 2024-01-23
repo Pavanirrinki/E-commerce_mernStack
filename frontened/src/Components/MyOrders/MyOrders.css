@@ -1,0 +1,28 @@
+.my_orders{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   }
+   .search_bar{
+    width: 60%;
+    border-radius: 20px;
+    border: 1px solid grey;
+    position: relative;
+  }
+  .search_button{
+    position: absolute;
+ right: 21%;
+ border-radius: 10px;
+ border: none;
+ background-color: transparent;
+ color: red;
+    }
+.my_order_block{
+    background-color: white;
+    width:90%;
+   margin: 15px auto;
+    box-shadow: 5px 5px 8px 5px #888888;
+    display: flex;
+    justify-content: space-around;
+  };
+ 

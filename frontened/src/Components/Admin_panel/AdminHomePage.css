@@ -1,0 +1,38 @@
+.sidebar{
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background: white;
+ 
+  overflow-y: visible;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+  
+}
+.home-section {
+  background: white;
+  min-height: 120vh;
+  width: calc(100% - 240px)px;
+}
+
+.home-section nav{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+   left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  
+}
+.home-content{
+  position: relative;
+  margin-left: 280px;
+  top:90px;
+}
+

@@ -1,0 +1,25 @@
+.category_heading{
+    font-weight:bolder;
+    font-size: 24px;
+    margin: 20px;
+}
+.arrow1 {
+filter: drop-shadow(0px 0px 5px #555);
+width: 2rem;
+height: 2rem;
+color: white;
+}
+
+.image-slider {
+  display: flex;
+  overflow: hidden;
+justify-content: space-between;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}

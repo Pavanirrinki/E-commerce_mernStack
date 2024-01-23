@@ -1,0 +1,21 @@
+.order_summary_product_image_card{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 150px;
+  margin-right: 50px;
+}
+.order_summary_product_image{
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 768px) {
+    .order_summary_product_image_card{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100px;
+    margin-right: 50px;
+  }
+}

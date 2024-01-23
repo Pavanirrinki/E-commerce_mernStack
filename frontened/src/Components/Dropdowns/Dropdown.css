@@ -1,0 +1,22 @@
+.dropdown-content-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .dropdown-content-products {
+    background-color: #fff;
+    position: absolute;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 500px;
+    z-index: 1;
+    text-align: center;
+    border-radius: 5px;
+
+
+  }
+
+  .dropdown-products {
+    text-decoration: none;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
