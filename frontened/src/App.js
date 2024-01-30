@@ -18,7 +18,8 @@ import EditProduct from './Components/Admin_panel/Products/EditProduct';
 import ManageAddress from './Components/Manage Address/ManageAddress';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import Orders from './Components/Admin_panel/Orders';
-
+import ParticularCategory from './Components/Category_products/ParticularCategory';
+import Searchcategoryproducts from './Components/Category_products/Searchcategoryproducts';
 function App() {
  
   const userdata = useSelector((state) => state);
@@ -52,7 +53,10 @@ useEffect(() => {
         <Route path='/product/:id' element={<Singleproduct />} />
         <Route path='manage_address' element={<ManageAddress />} />
         <Route path='place_order' element={<PlaceOrder />} />
-        <Route path='/admin_panel' element={<AdminHomePage />} >
+        <Route path='/particularcategory/:ParticularCategory' element={<ParticularCategory />} />
+        <Route path="/searchcategoryproducts/:category" element ={<Searchcategoryproducts />} />
+{/* --------------------------------------ADMIN ROUTES-------------------------------------- */}
+<Route path='/admin_panel' element={<AdminHomePage />} >
           <Route path='Dashboard' element={<Dashboard />} />
           <Route path='CreateProduct' element={<CreateProduct />} />
           <Route path='CreateNewproduct' element={<CreateNewproduct />} />

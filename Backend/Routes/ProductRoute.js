@@ -88,9 +88,9 @@ return res.status(200).json(particularcategoryproducts);
 
 //add product 
 router.post("/add_product",async(req,res)=>{
-    const{name,price,countInstock,description,category,images,sub_category} =req.body;
+    const{name,price,countInstock,description,category,images,sub_category,Seller} =req.body;
     try{
-        const product = await new productmodel({ name,price,countInstock,description,category,images,sub_category });
+        const product = await new productmodel({ name,price,countInstock,description,category,images,sub_category,Seller });
         await product.save();
         return res.status(201).json({ product });
     }catch(e){

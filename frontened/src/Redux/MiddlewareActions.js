@@ -141,3 +141,26 @@ export const loggeduserAction =(user_id)=>{
 }
 
 }
+
+export const SearchproductcategoryAction =(category)=>{
+  return async (dispatch) =>{
+    dispatch({ type:'SEARCHCATEGORIESWISEPRODUCTS_REQUEST'});
+
+   await axios
+      .get(API+`search/${category}`)
+      .then((response) => {
+       console.log("response.data",response.data)
+        dispatch({
+            type:"SEARCHCATEGORIESWISEPRODUCTS_SUCCESS",
+            payload:response.data
+        });
+      })
+      .catch((error) => {
+         dispatch({
+            type:'SEARCHCATEGORIESWISEPRODUCTS_FAILURE',
+            payload:error.message
+        });
+        console.log(error.message,"pavan kumar")
+      });
+}
+}

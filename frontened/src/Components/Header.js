@@ -15,14 +15,16 @@ import { RiLoginBoxFill } from "react-icons/ri";
 import {  IoPersonAddSharp } from "react-icons/io5";
 import { FaAddressBook } from "react-icons/fa";
 import {  toast } from 'react-toastify';
+import { useDispatch,useSelector } from 'react-redux';
 function Header() {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   const userdetails = JSON.parse(localStorage.getItem("userdata"));
   const [show,setShow]=useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => { setShow(true) };
-
+const searchstate = useSelector((state)=>console.log(state.SearchReducer))
 
   const LogOutHandler =async() =>{
     localStorage.removeItem("userdata");
@@ -38,6 +40,16 @@ function Header() {
       })
     navigate("/")
   }
+
+const searchHandler = (e) =>{
+  dispatch({ type: 'SEARCH_REQUEST',payload: e.target.value,});
+  console.log(e.target.value)
+}
+
+const swe =(e) =>{
+e.preventDefault()
+console.log("1234")
+}
   return (
     // DESKTOP VERSION
     <div>
@@ -49,7 +61,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <div class="search-container">
+            <div class="search-container" onChange={searchHandler}>
               <input type="search" placeholder="search products here......" className='input_data' />
               <AiOutlineSearch className="search-icon" />
             </div>

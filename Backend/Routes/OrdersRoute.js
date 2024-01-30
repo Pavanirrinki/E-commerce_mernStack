@@ -30,6 +30,7 @@ router.get('/search/:keyword', async (req, res) => {
           { name: { $regex: keyword, $options: 'i' } },
           { description: { $regex: keyword, $options: 'i' } },
           { sub_category: { $regex: keyword, $options: 'i' } },
+          {Seller:{$regex: keyword, $options: 'i' }}
         ],
       });
     }

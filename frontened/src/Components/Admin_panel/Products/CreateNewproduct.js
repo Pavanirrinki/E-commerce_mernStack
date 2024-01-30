@@ -14,7 +14,8 @@ function CreateNewproduct() {
   const [productscount,setProductscount] = useState(0);
   const [productcategory,setProductcategory] = useState(null);
   const [productimage,setProductimage] = useState(null);
-  const [sub_category,setSub_category] = useState('')
+  const [sub_category,setSub_category] = useState('');
+  const [productSeller,setProductSeller] = useState("")
   const categoriesdata = useSelector((state)=>state.CategoriesReducer.categories.category);
   const dispatch = useDispatch();
   useEffect( ()=>{
@@ -43,6 +44,7 @@ console.log("pqwert",productimage)
     await imagessubmit(event,productimage);
   await  axios.post(API+"add_product",{name:producttile,
       price:productprice,
+      Seller:productSeller,
       countInstock:productscount,
       description:productdescription,
       category:productcategory,
@@ -59,13 +61,7 @@ console.log("pqwert",productimage)
           progress: undefined,
           theme: "colored",
           })
-        setProductcategory('')
-        setProductdescription('')
-        setProductimage(null)
-        setProductprice(0)
-        setProductscount(0)
-        setProducttitle('');
-        window.location.reload();
+          window.location.reload();
         }).
       catch((error)=>{
         console.log(error.message);
@@ -93,13 +89,19 @@ console.log("pqwert",productimage)
        <button style={{border:"none",backgroundColor:"green",color:"white",fontWeight:"bolder",
        padding:"0px 5px 0px 5px",borderRadius:"10px",marginRight:"50px"}} onClick={handleSubmit}>Publish Now</button>
        </div>
-       <div className='create_product_form'>
-       <form >
+       <div className='create_product_form' >
+       <form>
         <div>
         <label className='product_label'>Product title</label><br />
         <input type='text' placeholder='Product Name...' className='input_field' 
         value={producttile} onChange={(e)=>setProducttitle(e.target.value)}/>
         </div>
+        <div>
+        <label className='product_label'>Product Brand</label><br />
+        <input type='text' placeholder='Product Brand...' className='input_field' 
+        value={productSeller} onChange={(e)=>setProductSeller(e.target.value)}/>
+        </div>
+
         <div>
         <label className='product_label'>Price</label><br />
         <input type='number' placeholder='Product Price...' className='input_field' 
