@@ -20,12 +20,13 @@ import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import Orders from './Components/Admin_panel/Orders';
 import ParticularCategory from './Components/Category_products/ParticularCategory';
 import Searchcategoryproducts from './Components/Category_products/Searchcategoryproducts';
+import PaymentSuccessful from './Pages/PaymentSuccessful';
 function App() {
  
   const userdata = useSelector((state) => state);
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const noHeaderFooterRoutes = ['/login', '/signup', '/admin_panel',"/Cart"];
+  const noHeaderFooterRoutes = ['/login', '/signup', '/admin_panel',"/Cart","/payment_successful"];
 console.log()
 const shouldDisplayHeaderFooter = () => {
 
@@ -55,7 +56,8 @@ useEffect(() => {
         <Route path='place_order' element={<PlaceOrder />} />
         <Route path='/particularcategory/:ParticularCategory' element={<ParticularCategory />} />
         <Route path="/searchcategoryproducts/:category" element ={<Searchcategoryproducts />} />
-{/* --------------------------------------ADMIN ROUTES-------------------------------------- */}
+        <Route path="/payment_successful" element={<PaymentSuccessful />} />
+ {/* --------------------------------------ADMIN ROUTES-------------------------------------- */}
 <Route path='/admin_panel' element={<AdminHomePage />} >
           <Route path='Dashboard' element={<Dashboard />} />
           <Route path='CreateProduct' element={<CreateProduct />} />

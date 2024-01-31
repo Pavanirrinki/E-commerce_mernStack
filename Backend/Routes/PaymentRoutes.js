@@ -83,7 +83,7 @@ await purchasedproductsids?.map(async (product)=>{
         );
 
               
-          return res.status(200).json("sucessfully payment completed");
+          return res.status(200).redirect('http://localhost:3000/payment_successful');
                     } catch (error) {
                         return res.status(400).json({ error: error.message });
                     }

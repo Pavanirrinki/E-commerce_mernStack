@@ -75,8 +75,8 @@ console.log("1234")
                 navigate("/Cart");
               }}>
               <AiOutlineShoppingCart className='cart-icon' />
-              <p className='para'> Cart </p>
-            </div>
+               <p className='para'> Cart </p>
+              </div>
           </li>
           <li style={{ marginRight: "30px" }}>
 
