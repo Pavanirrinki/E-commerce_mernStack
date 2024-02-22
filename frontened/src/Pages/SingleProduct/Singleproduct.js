@@ -48,10 +48,10 @@ console.log("product_id",product_id);
   }).then((data)=>localStorage.setItem("cartdata",JSON.stringify(data.data))).catch((error)=>console.log(error.message));
 }
 
-const productpresentornotincart =  userstate?.cartproducts?.findIndex((product)=>product?.product?._id?.toString() == id)
-
+const productpresentornotinpurchasedproduct =  userstate?.purchasedproducts?.findIndex((product)=>product?._id?.toString() == id)
+const productpresentornotincart =-1
 console.log(productpresentornotincart,"productpresentornotincart")
-
+console.log(productpresentornotinpurchasedproduct,"productpresentornotinpurchasedproduct")
 console.log(particularproductdata,'particular')
 console.log("ni yebba edhi redux ra",userstate)
   return (
@@ -107,7 +107,7 @@ console.log("ni yebba edhi redux ra",userstate)
         <p>1,249 Ratings & 108 Reviews</p>
         <h6>Special Price</h6>
         <div style={{ display: "flex" }}>
-          <h4 style={{ float: "left", marginRight: "10px" }}>₹ {particularproductdata?.price}</h4>
+          <h4 style={{ float: "left", marginRight: "10px" }}>₹ {particularproductdata?.particularproduct?.price}</h4>
           <h6 style={{ textDecoration: "line-through", color: "grey", marginTop: "5px" }}>₹ 50,000</h6>
           <h6 style={{ color: "#228c22", marginTop: "5px", fontWeight: "bold", marginLeft: "10px" }}>33% off</h6>
         </div>
@@ -137,7 +137,7 @@ console.log("ni yebba edhi redux ra",userstate)
       </div>
     </div>
     <div className='d-md-flex'>
-    <Rating Rating={particularproductdata?.particularproduct?.rating}/>
+    <Rating Rating={particularproductdata?.particularproduct?.rating} productpresentornotinpurchasedproduct={productpresentornotinpurchasedproduct} id={id}/>
     <div style={{}} className='width_comments'>
     <Comments comments={particularproductdata?.particularproduct?.comments} rating={particularproductdata?.particularproduct?.rating}/>
     </div>

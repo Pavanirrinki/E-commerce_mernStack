@@ -158,8 +158,7 @@ router.post("/comments/:product_id", async (req, res) => {
       { new: true }
     );
     if(productdata){
-      const userdata = await Usermodel.findById(postedBy);
-      return res.status(200).json({productdata,userdata});
+      return res.status(200).json({productdata});
     }
 
   } catch (error) {
