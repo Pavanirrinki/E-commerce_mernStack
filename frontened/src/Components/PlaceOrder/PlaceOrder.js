@@ -43,7 +43,7 @@ const paymentHandler = async () => {
     description: "Tutorial of RazorPay",
     image: "https://avatars.githubusercontent.com/u/25058652?v=4",
     order_id: response?.data?.id,
-    callback_url: "http://localhost:3070/payment_verification",
+    callback_url: API+"payment_verification",
     prefill: {
       name: "Gaurav Kumar",
       email: "gaurav.kumar@example.com",
