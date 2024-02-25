@@ -83,7 +83,7 @@ await purchasedproductsids?.map(async (product)=>{
         );
 
               
-          return res.status(200).redirect('https://e-commerce-mern-stack-yn96.vercel.app/payment_successful');
+          return res.status(200).redirect('https://e-commerce-mern-stack-4cuoce8xt-pavanirrinki.vercel.app/payment_successful');
                     } catch (error) {
                         return res.status(400).json({ error: error.message });
                     }
