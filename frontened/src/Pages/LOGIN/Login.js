@@ -5,6 +5,8 @@ import { API } from '../../API/API';
 import { Link, useNavigate } from 'react-router-dom';
 import {  toast } from 'react-toastify';
 import { useSelector,useDispatch } from 'react-redux';
+import { Container,Box,Avatar, Typography, Grid, TextField,Button,Breadcrumbs,FormHelperText} from '@mui/material';
+import { FaLock } from 'react-icons/fa';
 function Login() {
 
   const [email,setEmail]= useState('');
@@ -35,25 +37,67 @@ function Login() {
  })
   }
   return (
-   <div className='login-form'>
-    <div className='login-container'>
-      <h4 style={{textAlign:"center"}}>LOGIN</h4>
-  <div className='input-field-login'>
-  <h6>EMAIL</h6>
-    <input type="email" className='email-input-field' value={email} onChange={(e) => setEmail(e.target.value)} required/>
-  </div>
-  <div className='input-field-login'>
-  <h6>PASSWORD</h6>
-    <input type="password" className='email-input-field' value={password} onChange={(e) => setPassword(e.target.value)} required/>
- </div>
- <p className='forgot-password'>Forgot password ?</p>
- <div className='login-btn-container'>
-<button className='login-btn' onClick={loginformsubmit}>LOGIN</button>
- <p style={{fontWeight:"bolder"}}>Dont have account ?<Link to="/signup" className='link-router-dom'>sign up</Link> </p>
- </div>
-  </div>
- 
-   </div>
+<Container maxWidth="sm">
+<form onSubmit={loginformsubmit} margin="auto">
+
+<Grid container spacing={2} marginTop='auto'>
+      <Grid item xs={12} textAlign='center' >
+        <Box sx={{ margin: "auto" }}>
+          <Avatar sx={{ margin: "auto", backgroundColor: "#3f51b5" }}>
+            <FaLock />
+          </Avatar>
+        </Box>
+        <Typography variant="h5" gutterBottom>LOG IN</Typography>
+      </Grid>
+      
+      <Grid item xs={12}>
+        <TextField
+          label="Email"
+          variant="outlined"
+          fullWidth
+          name="email"
+          required
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {/* <FormHelperText style={{ color: 'red' }}>Please enter a valid email address</FormHelperText> */}
+      </Grid>
+      <Grid item xs={12}>
+        <TextField
+          label="Password"
+          variant="outlined"
+          fullWidth
+          type="password"
+          name="password"
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        {/* <FormHelperText style={{ color: 'red' }}>{userdata.isLoading ?"Please enter minimum 8 characters password":""}</FormHelperText> */}
+      </Grid>
+      <Grid item xs={12}>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          fullWidth
+        >
+          LOG IN
+         {/* {userdata.isLoading ? "loading........":"Register"} */}
+        </Button>
+      </Grid>
+      <Grid item xs={12} justifyContent='flex-end' display='flex'>
+      <Breadcrumbs  aria-label="breadcrumb" separator="?">
+      <Typography color="text.primary" >Don't have an account</Typography> 
+      <Link to="/signup">
+        <Typography variant='h6' color="primary.main" sx={{textDecoration:"underline"}}>SIGN UP</Typography>
+        </Link>
+      </Breadcrumbs>
+      </Grid>
+    </Grid>
+  
+</form>
+</Container>
   )
 }
 
