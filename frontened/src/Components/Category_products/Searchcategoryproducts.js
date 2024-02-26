@@ -12,19 +12,30 @@ useEffect(()=>{
     dispatch(SearchproductcategoryAction("ELECTRONICS"))
 },[category])
 const searchcategoryproducts = useSelector((state)=>state.Searchproductcategoryreducer)
-useEffect(()=>{
-const productsdata = searchcategoryproducts?.categorieswiseproducts?.slice(0,10);
-setFilteredprducts(productsdata)
-},[])
+useEffect(() => {
+  const fetchData = async () => {
+      try {
+          const productsdata = await searchcategoryproducts?.categorieswiseproducts?.slice(0, 10);
+          setFilteredprducts(productsdata);
+      } catch (error) {
+         
+          console.error("Error fetching data:", error);
+      }
+  };
+
+  fetchData(); 
+}, []); 
+
 
 const productsasperpage =(index) =>{
   const products = searchcategoryproducts?.categorieswiseproducts?.slice((index)*10,((index)*10)+10)
   setFilteredprducts(products)
 }
-console.log(filteredprducts,"fit")
+console.log(filteredprducts,"fit");
+console.log(searchcategoryproducts,"search")
   return (
     <div style={{display:"flex",justifyContent:"center",flexWrap:"wrap"}}>
-     {filteredprducts == null ?
+     {filteredprducts?.length == 0 ?
   (searchcategoryproducts && searchcategoryproducts?.categorieswiseproducts?.map((category) => {
     return (
       <div style={{ border: "1px solid black", padding: "10px 15px", marginLeft: "15px", flexWrap: "wrap", marginBottom: "10px" }}
@@ -52,7 +63,7 @@ console.log(filteredprducts,"fit")
    <div style={{display:"flex",width:"100%",justifyContent:"center"}}>
 
 
-   {Array.from({ length: Math.ceil((searchcategoryproducts?.categorieswiseproducts?.length) / 10) }, (_, index) => (
+   {(searchcategoryproducts || filteredprducts) && Array.from({ length: Math.ceil((searchcategoryproducts?.categorieswiseproducts?.length) / 10) }, (_, index) => (
   (searchcategoryproducts?.categorieswiseproducts?.length !== 10) && 
     <button 
       style={{ border: 'none', borderRadius: "50%", padding: "0 10px", marginRight: "2px" }} 

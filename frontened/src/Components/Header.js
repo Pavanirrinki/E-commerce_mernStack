@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai';
-
+import { Badge } from '@mui/material';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "./Header.css";
 import { AiOutlineShoppingCart } from 'react-icons/ai'
@@ -74,9 +74,10 @@ console.log("1234")
                { 
                 navigate("/Cart");
               }}>
-              <AiOutlineShoppingCart className='cart-icon' />
-               <p className='para'> Cart </p>
-              </div>
+             <Badge badgeContent={4} color="error">
+  <AiOutlineShoppingCart color="action" fontSize={30}/>
+</Badge>
+ </div>
           </li>
           <li style={{ marginRight: "30px" }}>
 

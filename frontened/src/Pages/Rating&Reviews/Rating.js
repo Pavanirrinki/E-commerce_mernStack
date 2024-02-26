@@ -15,7 +15,7 @@ setShow(true)
         <div style={{display:"flex",flexDirection:"column",minWidth:"15%",marginLeft:"5%"}}>
           <div style={{display:"flex"}}>
         <h6>Customer Reviews</h6>
-        {productpresentornotinpurchasedproduct !== -1 &&
+        {(productpresentornotinpurchasedproduct !== -1 && productpresentornotinpurchasedproduct !== undefined) &&
         <button onClick={()=>Rateforproduct(id)}>Rate Product</button>}
         {showpopup &&
         <Modalpopup setShow={setShow} show={show} productid={id}/>}

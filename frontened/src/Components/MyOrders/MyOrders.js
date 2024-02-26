@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import "./MyOrders.css";
 import { useDispatch,useSelector } from 'react-redux';
 import { loggeduserAction } from '../../Redux/MiddlewareActions';
+import { useNavigate } from 'react-router-dom';
 function MyOrders() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const userdetails = JSON.parse(localStorage.getItem("userdata"));
   const userstate = useSelector((state) => (state.UserDetailsReducer?.user?.user_details))
   useEffect(() => {
@@ -21,7 +23,7 @@ function MyOrders() {
   </div>
   {userdetails && userstate?.purchasedproducts?.length !== 0 ? userstate?.purchasedproducts?.map((product)=>{
     return(
-      <div className='my_order_block'>
+      <div className='my_order_block' onClick={()=>navigate(`/product/${product?._id}`)}>
       <img src={product?.images[0]} className="orders_image"/>
       <div style={{margin:"auto"}}>
       <p>{product?.name}</p>

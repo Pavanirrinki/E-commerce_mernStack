@@ -8,6 +8,7 @@ import { API } from '../../API/API';
 import Comments from '../Comments/Comments.js';
 import { useParams } from 'react-router-dom';
 import "./Singleproduct.css"
+import {  toast } from 'react-toastify';
 import { loggeduserAction }  from "../../Redux/MiddlewareActions.js";
 import { useSelector,useDispatch } from 'react-redux';
  function Singleproduct() {
@@ -45,7 +46,17 @@ console.log("product_id",product_id);
       'Content-Type': 'application/json', 
       'X-Token': userdetails?.token
     }
-  }).then((data)=>localStorage.setItem("cartdata",JSON.stringify(data.data))).catch((error)=>console.log(error.message));
+  }).then((data)=>{localStorage.setItem("cartdata",JSON.stringify(data.data)); 
+  toast.success(`product successfully added to cart`, {
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "colored",
+    })}).catch((error)=>console.log(error.message));
 }
 
 const productpresentornotinpurchasedproduct =  userstate?.purchasedproducts?.findIndex((product)=>product?._id?.toString() == id)
