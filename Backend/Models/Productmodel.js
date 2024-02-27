@@ -36,6 +36,10 @@ required:true
    default:0
  },
  comments:[{
+   rating:{
+  type:Number,
+  default:0
+   },
    coment:{
       type:String,
    },

@@ -3,22 +3,14 @@ import { FaStar } from "react-icons/fa";
 import "./Rating.css";
 import Modalpopup from '../Modalpopup';
 
-function Rating({Rating,productpresentornotinpurchasedproduct,id}) {
-  const [showpopup,setShowpopup] = useState(false);
-  const [show, setShow] = useState(false);
-const Rateforproduct =()=>{
-setShowpopup(true);
-setShow(true)
-}
+function Rating({Rating}) {
+
   return (
     <div style={{display:"flex",justifyContent:"space-between"}}>
         <div style={{display:"flex",flexDirection:"column",minWidth:"15%",marginLeft:"5%"}}>
           <div style={{display:"flex"}}>
         <h6>Customer Reviews</h6>
-        {(productpresentornotinpurchasedproduct !== -1 && productpresentornotinpurchasedproduct !== undefined) &&
-        <button onClick={()=>Rateforproduct(id)}>Rate Product</button>}
-        {showpopup &&
-        <Modalpopup setShow={setShow} show={show} productid={id}/>}
+       
         </div>
         <div style={{display:"flex",justifyContent:"space-between"}}>
          {[1,2,3,4,5].map(()=>{

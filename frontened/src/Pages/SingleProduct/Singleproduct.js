@@ -148,7 +148,7 @@ console.log("ni yebba edhi redux ra",userstate)
       </div>
     </div>
     <div className='d-md-flex'>
-    <Rating Rating={particularproductdata?.particularproduct?.rating} productpresentornotinpurchasedproduct={productpresentornotinpurchasedproduct} id={id}/>
+    <Rating Rating={particularproductdata?.particularproduct?.rating}/>
     <div style={{}} className='width_comments'>
     <Comments comments={particularproductdata?.particularproduct?.comments} rating={particularproductdata?.particularproduct?.rating}/>
     </div>

@@ -150,11 +150,11 @@ router.delete("/delete_product/:id",async(req,res)=>{
 
 //COMMENTS FOR PRODUCT
 router.post("/comments/:product_id", async (req, res) => {
-  const { postedBy, comment } = req.body;
+  const { postedBy, comment,rating } = req.body;
   try {
     const productdata = await productmodel.findByIdAndUpdate(
       req.params.product_id,
-      { $push: { comments: {coment: comment, postedBy } } },
+      { $push: { comments: {rating:rating,coment: comment, postedBy } } },
       { new: true }
     );
     if(productdata){

@@ -5,6 +5,7 @@ import axios from "axios";
 import {API} from "../../API/API.js";
 import { useSelector,useDispatch } from 'react-redux';
 import { loggeduserAction } from '../../Redux/MiddlewareActions.js';
+import { Autocomplete,Box,TextField } from '@mui/material';
 function ManageAddress() {
   const dispatch = useDispatch();
   const initialAddress = {
@@ -68,6 +69,7 @@ className={show_address ? 'd-md-flex d-block box_address':"disply_address"} onSu
 <input type="text" placeholder='Landmark' className='input_field' name="Landmark"onChange={addresschange} value={user_address?.Landmark}/><br />
 <input type="tel" placeholder='AlternativePhoneNumber......' className='input_field' name="alternativephone"onChange={addresschange} value={user_address?.alternativephone}/><br />
 <input type="tel" placeholder='Enter your State......' className='input_field'name="State" onChange={addresschange} value={user_address?.State}/><br />
+
 <div style={{display:"flex",justifyContent:"center",width:"100%",marginBottom:"20px"}}>
   <label style={{fontSize:"20px",marginLeft:"20px"}}>Address_type :-</label>
 <label style={{fontSize:"20px",margin:"auto"}}>
