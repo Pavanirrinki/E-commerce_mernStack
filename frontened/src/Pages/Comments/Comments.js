@@ -18,7 +18,9 @@ const Comments = ({comments,rating}) => {
               <img src={Travel} style={{ height: "100px", width: "100px" }} />
               <img src={Travel} style={{ height: "100px", width: "100px" }} />
           </div>
-    ))}</>
+    ))}
+   
+    </>
   )
 }
 

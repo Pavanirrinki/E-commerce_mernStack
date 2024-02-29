@@ -155,11 +155,14 @@ router.post("/comments/:product_id", async (req, res) => {
     const productdata = await productmodel.findByIdAndUpdate(
       req.params.product_id,
       { $push: { comments: {rating:rating,coment: comment, postedBy } } },
-      { new: true }
+       { new: true }
     );
-    if(productdata){
+const totalrating = await productdata?.comments?.reduce((acc,res)=>acc+res.rating,0);
+   productdata.rating = totalrating/productdata.comments.length;
+ 
+  await productdata.save()
       return res.status(200).json({productdata});
-    }
+    
 
   } catch (error) {
     console.error(error);

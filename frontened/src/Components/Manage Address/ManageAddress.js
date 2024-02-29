@@ -51,13 +51,13 @@ const ManageAddress =(e) =>{
   return (
     <div>
       <h4 style={{fontWeight:"900"}}>Manage Address</h4>
-     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0 auto",
+     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0 auto",borderRadius:"10px",
      color:"blue",border:"1px solid black",marginBottom:"20px",width:"90%"}} onClick={showaddress_input}>
   <FaPlus />
-  <p style={{ fontSize: "20px", marginLeft: "8px", marginBottom: "0" }}>Add Address</p>
+  <p style={{ fontSize: "20px", marginLeft: "8px", marginBottom: "0"}}>Add Address</p>
 </div>
 
-<form style={{flexWrap:"wrap",justifyContent:"center",paddingTop:"40px",width:"80%",margin:"0 auto",marginBottom:"20px"}} 
+<form style={{flexWrap:"wrap",justifyContent:"center",paddingTop:"40px",width:"80%",margin:"0 auto",marginBottom:"20px",borderRadius:"8px"}} 
 className={show_address ? 'd-md-flex d-block box_address':"disply_address"} onSubmit={ManageAddress}>
   <input type="name" placeholder='Enter your name...' className='input_field' name="name" onChange={addresschange} value={user_address?.name}/><br />
  <input type="tel" placeholder="Enter your mobile number..." className='input_field' name="mobileNumber" onChange={addresschange} value={user_address?.mobileNumber}/><br />
@@ -93,8 +93,8 @@ className={show_address ? 'd-md-flex d-block box_address':"disply_address"} onSu
 </form>
 
 {userstate?.Addresses && userstate?.Addresses?.map((address)=>(
-  <div style={{border:"1px solid black",backgroundColor:"white",width:"80%",marginBottom:"40px",marginLeft:"10%",paddingLeft:"20px"}}>
-  <p className='bg-secondary d-inline p-1' >{address?.Address_type}</p>
+  <div style={{border:"1px solid black",borderRadius:"15px",backgroundColor:"white",width:"80%",marginBottom:"40px",marginLeft:"10%",paddingLeft:"20px"}}>
+  <p className='bg-secondary d-inline p-1 rounded' >{address?.Address_type}</p>
   <div style={{display:"flex"}}>
   <h5 style={{marginRight:"20px"}}>{address?.name}</h5>
   <h5>{address?.mobileNumber}</h5>

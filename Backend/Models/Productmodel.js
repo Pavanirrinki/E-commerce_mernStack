@@ -10,7 +10,8 @@ const productSchema = new mongoose.Schema({
   },
   Seller:{
    type:String,
-   required:true
+   required:true,
+   default:"pavan"
   },
   countInstock:{
    type:Number,
